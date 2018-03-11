@@ -3,6 +3,7 @@ package com.skilldistillery.Projects.Jets;
 import java.util.ArrayList;
 
 public abstract class Jet {
+	protected static AirField airfield = new AirField();
 	private String model;
 	private double speed;
 	private int range;
@@ -55,11 +56,11 @@ public abstract class Jet {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Jet model:");
 		builder.append(model);
-		builder.append(", speed: ");
+		builder.append(",\t speed: ");
 		builder.append(speed);
-		builder.append(", range: ");
+		builder.append(",\t range: ");
 		builder.append(range);
-		builder.append(", price: ");
+		builder.append(",\t price: ");
 		builder.append(price);
 		builder.append("");
 		return builder.toString();

@@ -14,12 +14,7 @@ public class CargoPlane extends Jet implements CargoCarrier {
 		// TODO Auto-generated method stub
 	}
 	
-	ArrayList <Jet> jets = JetsApp.airfield.getJets();
-	
 	public void fly() {
-		for (int i = 0; i < jets.size(); i++) {
-			System.out.println("WHoOOooOsssshhh");
-		}
 	}
 	
 }

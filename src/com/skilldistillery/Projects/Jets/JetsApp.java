@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class JetsApp {
-	protected static AirField airfield = new AirField();
 	private Scanner kb = new Scanner(System.in);
 	private int longestRange = 0;
 	private double greatestSpeed = 0;
@@ -14,6 +13,7 @@ public class JetsApp {
 	public static void main(String[] args) {
 
 		JetsApp jetsApp = new JetsApp();
+		AirField airfield = new AirField();
 		ArrayList <Jet> jets = airfield.getJets();
 		jetsApp.launch(jets);
 
@@ -63,10 +63,9 @@ public class JetsApp {
 
 	switch (userChoice) {
 			case 1:
+				System.out.println("Initial number of jets: " + jets.size());
 				for (int i = 0; i < jets.size(); i++) {
 					System.out.println(jets.get(i).toString());
-					System.out.println();
-					System.out.println("Initial number of jets: " + jets.size());
 					
 				}
 				break;
@@ -76,7 +75,8 @@ public class JetsApp {
 	//			}
 				System.out.println("Scramble the jets!!!");
 				for (int i = 0; i < jets.size(); i++) {
-					jets.get(i).fly(jets);
+					System.out.println(jets.get(i).getModel() + ": ");
+					System.out.println("Whoosh!");
 				}
 				
 				break;
