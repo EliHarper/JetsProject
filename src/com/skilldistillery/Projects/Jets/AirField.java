@@ -51,11 +51,9 @@ public class AirField {
 			newPrice = newSpeed.parseDouble(newSpeedString);
 			
 			System.out.println("What is its range?");
-			kb.nextLine();
 			String newRangeString = kb.nextLine();
 			Integer newRange = new Integer(1);
 			newRange = newRange.parseInt(newRangeString);
-			
 			
 			jets.add(new CargoPlane (newModel, newSpeed.doubleValue(), newPrice.longValue(), newRange.intValue()));
 			
