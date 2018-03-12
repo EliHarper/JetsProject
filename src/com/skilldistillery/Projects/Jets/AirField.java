@@ -34,7 +34,7 @@ public class AirField {
 		System.out.println("Would you like to add a cargo plane or a fighter jet?");
 		String cpOrFJ = kb.next();
 		
-		if (cpOrFJ.startsWith("c")) {
+		if (cpOrFJ.startsWith("c") || cpOrFJ.startsWith("C")) {
 			
 			System.out.println("What is its model?");
 			kb.nextLine();
@@ -66,18 +66,26 @@ public class AirField {
 		else {
 			System.out.println("What is its model?");
 			kb.nextLine();
-			String newModel = kb.next();
+			String newModel = kb.nextLine();
 			
 			System.out.println("What is its max speed?");
-			double newSpeed = kb.nextDouble();
+			String newSpeedString = kb.nextLine();
+			Double newSpeed = new Double("0");
+			newSpeed = newSpeed.parseDouble(newSpeedString);
 			
 			System.out.println("How much does it cost?");
-			long newPrice = kb.nextLong();
+			String newPriceString = kb.nextLine();
+			Double newPrice = new Double(0);
+			newPrice = newSpeed.parseDouble(newSpeedString);
 			
 			System.out.println("What is its range?");
-			int newRange = kb.nextInt();
+			kb.nextLine();
+			String newRangeString = kb.nextLine();
+			Integer newRange = new Integer(1);
+			newRange = newRange.parseInt(newRangeString);
 			
-			jets.add(new CargoPlane (newModel, newSpeed, newPrice, newRange));
+			
+			jets.add(new FighterJet(newModel, newSpeed.doubleValue(), newPrice.longValue(), newRange.intValue()));
 			
 			System.out.println("New number of jets: " + jets.size() );
 			

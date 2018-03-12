@@ -21,8 +21,9 @@ public abstract class Jet {
 		
 	}
 	
-	public double getSpeedInMach(double speed) {
+	public double getSpeedInMach(ArrayList <Jet> jets) {
 		double speedInMach = 0;
+		speedInMach = this.speed * 0.00130332;
 		
 		return speedInMach;
 	}

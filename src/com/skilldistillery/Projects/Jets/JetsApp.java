@@ -50,24 +50,24 @@ public class JetsApp {
 		
 		ArrayList <Jet> jets = airfield.getJets();
 		
-		System.out.println(" Welcome to the Airfield! \n");
+		System.out.println("\n Welcome to the Airfield! \n");
 		System.out.println("**************************");
 		System.out.println("*________________________*");
 		System.out.println("*       Main Menu        *");
 		System.out.println("*________________________*");
-		System.out.println("**************************");
+		System.out.println("**************************\n");
 		System.out.println("1: List fleet");
 		System.out.println("2: Fly all jets");
 		System.out.println("3: View jet with longest range");
 		System.out.println("4: View fastest jet");
 		System.out.println("5: Add a jet to the fleet");
-		System.out.println("6: Quit");
+		System.out.println("6: Quit\n\n");
 
 		userChoice = kb.nextInt();
 
 	switch (userChoice) {
 			case 1:
-				System.out.println("Initial number of jets: " + jets.size());
+				System.out.println("Initial number of jets: " + jets.size() +"\n");
 				for (int i = 0; i < jets.size(); i++) {
 					System.out.println(jets.get(i).toString());
 					
@@ -79,7 +79,7 @@ public class JetsApp {
 	//			}
 				System.out.println("Scramble the jets!!!");
 				for (int i = 0; i < jets.size(); i++) {
-					System.out.println(jets.get(i).getModel() + ": ");
+					System.out.print(jets.get(i).getModel() + ": ");
 					System.out.println("Whoosh!");
 				}
 				
