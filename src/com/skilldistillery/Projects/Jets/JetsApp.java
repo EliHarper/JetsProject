@@ -46,7 +46,7 @@ public class JetsApp {
 	
 	private void userMenu() {
 	int userChoice = 0;
-	while (userChoice != 6) {
+	while (userChoice != 8) {
 		
 		ArrayList <Jet> jets = airfield.getJets();
 		
@@ -61,7 +61,9 @@ public class JetsApp {
 		System.out.println("3: View jet with longest range");
 		System.out.println("4: View fastest jet");
 		System.out.println("5: Add a jet to the fleet");
-		System.out.println("6: Quit\n\n");
+		System.out.println("6: Load cargo");
+		System.out.println("7: Dogfight!");
+		System.out.println("8: Quit\n\n");
 
 		userChoice = kb.nextInt();
 
@@ -112,6 +114,20 @@ public class JetsApp {
 				airfield.addJet();
 				break;
 			case 6:
+				for (int i = 0; i < jets.size(); i++) {
+					if (jets.get(i) instanceof CargoPlane) {
+						jets.get(i).loadCargo();
+					}
+				}
+				break;
+			case 7:
+				for (int i = 0; i < jets.size(); i++) {
+					if (jets.get(i) instanceof FighterJet) {
+						jets.get(i).fight();
+					}
+				}
+				break;
+			case 8:
 				System.out.println("Goodbye!");
 				break;
 				

@@ -68,6 +68,18 @@ public abstract class Jet {
 		builder.append("");
 		return builder.toString();
 	}
+
+
+	public void loadCargo() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	public void fight() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }
 

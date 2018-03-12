@@ -10,8 +10,8 @@ public class FighterJet extends Jet implements CombatReady {
 	
 	@Override
 	public void fight() {
-		System.out.println("PEW PEW PEW!");
-		System.out.println("AAAAHHHHHH!!!");
+		System.out.print(this.getModel() + ": PEW PEW PEW!   . . . \t");
+		System.out.println("AAAAHHHHHH!!!\n");
 	}
 	
 	public void fly() {
