@@ -9,17 +9,16 @@ public class JetsApp {
 	private double greatestSpeed = 0;
 	private int indexOfLongestRange = -1;
 	private int indexOfGreatestSpeed = -1;
+	AirField airfield = new AirField();
 
 	public static void main(String[] args) {
 
 		JetsApp jetsApp = new JetsApp();
-		AirField airfield = new AirField();
-		ArrayList <Jet> jets = airfield.getJets();
-		jetsApp.launch(jets);
+		jetsApp.launch();
 
 	}
 
-	public void launch(ArrayList <Jet> jets) {
+	public void launch() {
 	    
 		/*
 		 * 
@@ -39,13 +38,18 @@ public class JetsApp {
 		jets[4] = biplane;
 		*/
 		
-		userMenu(jets);
+		userMenu();
 		
 		
 
 	}
 	
-	private void userMenu(ArrayList <Jet> jets) {
+	private void userMenu() {
+	int userChoice = 0;
+	while (userChoice != 6) {
+		
+		ArrayList <Jet> jets = airfield.getJets();
+		
 		System.out.println(" Welcome to the Airfield! \n");
 		System.out.println("**************************");
 		System.out.println("*________________________*");
@@ -59,7 +63,7 @@ public class JetsApp {
 		System.out.println("5: Add a jet to the fleet");
 		System.out.println("6: Quit");
 
-		int userChoice = kb.nextInt();
+		userChoice = kb.nextInt();
 
 	switch (userChoice) {
 			case 1:
@@ -70,7 +74,7 @@ public class JetsApp {
 				}
 				break;
 			case 2:
-	//			for (int i = 0; i < jets.size(); i++) {
+	//			for (int i = 0; i < jets.length(); i++) {
 	//				jets[i].fly();
 	//			}
 				System.out.println("Scramble the jets!!!");
@@ -100,61 +104,23 @@ public class JetsApp {
 						greatestSpeed = jets.get(i).getSpeed();
 						indexOfGreatestSpeed = i;
 					}
-					//Printing the value for the jet
 				}
 				System.out.println("The fastest jet is " + jets.get(indexOfGreatestSpeed).getModel() + ", with a speed of " + greatestSpeed);
 				
 				break;
 			case 5:
-				System.out.println("Would you like to add a cargo plane or a fighter jet?");
-				String cpOrFJ = kb.next();
-				
-				if (cpOrFJ.equalsIgnoreCase("cargo plane")) {
-					
-					System.out.println("What is its model?");
-					String newModel = kb.next();
-					
-					System.out.println("What is its max speed?");
-					double newSpeed = kb.nextDouble();
-					
-					System.out.println("How much does it cost?");
-					long newPrice = kb.nextLong();
-					
-					System.out.println("What is its range?");
-					int newRange = kb.nextInt();
-					
-					jets.add(new CargoPlane (newModel, newSpeed, newPrice, newRange));
-					
-					System.out.println("New number of jets: " + jets.size() );
-					
-				}
-				else {
-					System.out.println("What is its model?");
-					String newModel = kb.next();
-					
-					System.out.println("What is its max speed?");
-					double newSpeed = kb.nextDouble();
-					
-					System.out.println("How much does it cost?");
-					long newPrice = kb.nextLong();
-					
-					System.out.println("What is its range?");
-					int newRange = kb.nextInt();
-					
-					jets.add(new FighterJet(newModel, newSpeed, newPrice, newRange));
-					
-					System.out.println("New number of jets: " + jets.size() );
-					
-				}
+				airfield.addJet();
 				break;
 			case 6:
 				System.out.println("Goodbye!");
 				break;
 				
 			default:System.out.println("Please enter a valid number");
+			
 		}
 
 	
+	}
 	}
 	
 	/*
