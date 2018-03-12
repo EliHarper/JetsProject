@@ -21,7 +21,7 @@ public abstract class Jet {
 		
 	}
 	
-	public double getSpeedInMach(ArrayList <Jet> jets) {
+	public double getSpeedInMach(double speed) {
 		double speedInMach = 0;
 		speedInMach = this.speed * 0.00130332;
 		
@@ -57,11 +57,13 @@ public abstract class Jet {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Jet model:");
 		builder.append(model);
-		builder.append(",\t speed: ");
+		builder.append(",\t\t speed: ");
 		builder.append(speed);
-		builder.append(",\t range: ");
+		builder.append(",\t\t range: ");
 		builder.append(range);
-		builder.append(",\t price: ");
+		builder.append(",\t\tSpeed in Mach: ");
+		builder.append(getSpeedInMach(speed));
+		builder.append(",\t\t price: ");
 		builder.append(price);
 		builder.append("");
 		return builder.toString();
